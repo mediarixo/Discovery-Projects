@@ -13,3 +13,5 @@ Freetype release 2.6.3 has been compiled with the following modules: base, truet
 Toolchain: uVision V5.36.0.0, (C) Keil Software - MDK-ARM Community Edition
 
 Development board: STM32F746G-DISCO
+
+Promo video: https://youtu.be/m6g3bF1s2Eo
