@@ -14,4 +14,4 @@ Toolchain: uVision V5.36.0.0, (C) Keil Software - MDK-ARM Community Edition
 
 Development board: STM32F746G-DISCO
 
-Promo video: https://youtu.be/m6g3bF1s2Eo
+Promo video: https://youtu.be/Y8JIfHRf5RU
