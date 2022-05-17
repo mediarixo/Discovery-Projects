@@ -63,10 +63,6 @@ int main(void) {
 	/* Init LCD */
 	TM_LCD_Init();
 
-	/* buggy func */
-//	/* Fill LCD with color */
-//	TM_LCD_Fill(0x00ff);
-//	Delayms(2000);
 	/* ------------------------------------------- */
 	/* Init SDRAM */
 	TM_SDRAM_Init();
@@ -86,7 +82,7 @@ int main(void) {
 	fprintf(&USART6_Stream, "Hello USART6 user (via fprintf)\r\n");*/
 	
 	/* ------------------------------------------- */
-  /* Set custom orientation for LCD */
+  	/* Set custom orientation for LCD */
 	TM_LCD_SetOrientation(1);
 	
 	/* Get orientation from LCD and save to Touch Screen structure */
@@ -100,43 +96,18 @@ int main(void) {
 	/* Try to mount card */
 	if (f_mount(&FS, "SD:", 1) == FR_OK) {
 		
-//		printf("\r\nTesting Freetype started.\r\n");
-// 		calc_w = TM_LCD_GetWidth() / 2;	/* 480 x 272 px */
-//		calc_h = TM_LCD_GetHeight() / 2;			
-		
 		readBMP("./img/image3.bmp");
 		
-		
-//		if (init_freetype() == 0) {
-			
-			 decodeOneStep("./img/android.png", 10, 10);
-			 decodeOneStep("./img/amazon.png", 68, 10);
-			 decodeOneStep("./img/behance.png", 126, 10);
-			 decodeOneStep("./img/bing.png", 10, 68);
-			 decodeOneStep("./img/box.png", 68, 68);
-			 decodeOneStep("./img/buffer.png", 126, 68);
-			 decodeOneStep("./img/delicious.png", 10, 126);
-			 decodeOneStep("./img/dropbox.png", 68, 126);
-			 decodeOneStep("./img/facebook.png", 126, 126);
-			
-//			if (draw_freetype("18:45", 5, calc_w-100, calc_h-100, 0xffff) == 1)
-//				printf("\r\nError in reading/drawing routine.\r\n");
-			
-			
-//			
-//			if (kill_freetype() == 0)
-//				TM_DISCO_LedOn(LED_ALL);
-//		}
-		
-		
-//		if (test_freetype() == 0) {
-//		/* Turn led ON if fclose is successfull */
-//		TM_DISCO_LedOn(LED_ALL);	
-//		} else {
-//			printf("test_freetype failed.\r\n");
-//		}
+		decodeOneStep("./img/android.png", 10, 10);
+		decodeOneStep("./img/amazon.png", 68, 10);
+		decodeOneStep("./img/behance.png", 126, 10);
+		decodeOneStep("./img/bing.png", 10, 68);
+		decodeOneStep("./img/box.png", 68, 68);
+		decodeOneStep("./img/buffer.png", 126, 68);
+		decodeOneStep("./img/delicious.png", 10, 126);
+		decodeOneStep("./img/dropbox.png", 68, 126);
+		decodeOneStep("./img/facebook.png", 126, 126);
 
-//		printf("\r\nTesting Freetype ended.\r\n");
 		/* Unmount SDCARD */
 		f_mount(NULL, "SD:", 1);
 	}
