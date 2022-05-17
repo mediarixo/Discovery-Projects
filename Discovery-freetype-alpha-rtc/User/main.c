@@ -62,10 +62,6 @@ int main(void) {
 	/* Init LCD */
 	TM_LCD_Init();
 
-	/* buggy func */
-//	/* Fill LCD with color */
-//	TM_LCD_Fill(0xffff);
-	
 	/* ------------------------------------------- */
 	/* Init USART, TX: PC6, RX: PC7, 921600 bauds  */
 	TM_USART_Init(USART6, TM_USART_PinsPack_1, 921600);
@@ -83,46 +79,13 @@ int main(void) {
 	/* -------------------------------------------- */
 	if (f_mount(&FS, "SD:", 1) == FR_OK) {
 	
-	readBMP("./img/image2.bmp");		
-	read_bg_image();
+		readBMP("./img/image2.bmp");		
+		read_bg_image();
 		
-	/* Unmount SDCARD */
-	f_mount(NULL, "SD:", 1);
-  }	
-//	/* Try to mount card */
-//	if (f_mount(&FS, "SD:", 1) == FR_OK) {
-//		
-//		printf("\r\nTesting Freetype started.\r\n");
-// 		calc_w = TM_LCD_GetWidth() / 2;	/* 480 x 272 px */
-//		calc_h = TM_LCD_GetHeight() / 2;			
-//		
-//		readBMP("./img/image.bmp");
-//		
-//		
-//		if (init_freetype() == 0) {
-//			
-//			if (draw_freetype("18:45", 5, calc_w-100, calc_h-100, 0xffff) == 1)
-//				printf("\r\nError in reading/drawing routine.\r\n");
-//			
-//			
-//			
-//			if (kill_freetype() == 0)
-//				TM_DISCO_LedOn(LED_ALL);
-//		}
-//		
-//		
-////		if (test_freetype() == 0) {
-////		/* Turn led ON if fclose is successfull */
-////		TM_DISCO_LedOn(LED_ALL);	
-////		} else {
-////			printf("test_freetype failed.\r\n");
-////		}
+		/* Unmount SDCARD */
+		f_mount(NULL, "SD:", 1);
+  	}	
 
-//		printf("\r\nTesting Freetype ended.\r\n");
-//		/* Unmount SDCARD */
-//		f_mount(NULL, "SD:", 1);
-//	}
-	/* -------------------------------------------- */
 	
 	/* Init RTC */
 	if (TM_RTC_Init(TM_RTC_ClockSource_External)) {
@@ -155,15 +118,6 @@ int main(void) {
 		/* Check difference */
 		if (RTCD.Seconds != sec) {
 			sec = RTCD.Seconds;
-		/* Use the following for minutes dectection (change sec to min = 0) */
-//		if (RTCD.Minutes != sec) {
-//			sec = RTCD.Minutes;
-			
-//			/* Format date */
-//			sprintf(str,"Date: %02d.%02d.%04d\r\n", RTCD.Day, RTCD.Month, RTCD.Year + 2000);
-			
-			/* Format time */
-//			printf("%02d.%02d.%02d\r\n", RTCD.Hours, RTCD.Minutes, RTCD.Seconds);
 			sprintf(str,"%02d:%02d:%02d", RTCD.Hours, RTCD.Minutes, RTCD.Seconds);
 			print_freetype(str,8);
 		}
