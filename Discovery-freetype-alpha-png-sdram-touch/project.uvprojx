@@ -889,14 +889,14 @@
           <GroupName>FREETYPE</GroupName>
           <Files>
             <File>
-              <FileName>freetype.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>.\lib\freetype.lib</FilePath>
-            </File>
-            <File>
               <FileName>module_freetype.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\User\module_freetype.h</FilePath>
+            </File>
+            <File>
+              <FileName>freetype.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>..\00-FREETYPE_LIBRARY\Objects\freetype.lib</FilePath>
             </File>
           </Files>
         </Group>
