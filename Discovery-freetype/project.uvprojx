@@ -316,7 +316,7 @@
             <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
-            <OneElfS>0</OneElfS>
+            <OneElfS>1</OneElfS>
             <Strict>0</Strict>
             <EnumInt>0</EnumInt>
             <PlainCh>0</PlainCh>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F746xx,USE_HAL_DRIVER,ARM_MATH_CM7,__FPU_PRESENT=1,STM32F7XX,STM32F7_DISCOVERY,HSE_VALUE=25000000,RCC_OSCILLATORTYPE=RCC_OSCILLATORTYPE_HSE,RCC_PLLSOURCE=RCC_PLLSOURCE_HSE,RCC_PLLM=25,RCC_PLLN=432,RCC_PLLP=2,RCC_PLLQ=9</Define>
               <Undefine></Undefine>
-              <IncludePath>.\User;.\TM;..\00-STM32_LIBRARIES;..\00-HAL_DRIVERS\STM32F7xx_HAL_Driver\Inc;..\00-HAL_DRIVERS\CMSIS\Device\ST\STM32F7xx\Include;..\00-HAL_DRIVERS\CMSIS\Include;..\00-STM32_LIBRARIES\fatfs;..\00-STM32_LIBRARIES\fatfs\drivers;..\00-STM32_LIBRARIES\fatfs\option;.\include</IncludePath>
+              <IncludePath>.\User;.\TM;..\00-STM32_LIBRARIES;..\00-HAL_DRIVERS\STM32F7xx_HAL_Driver\Inc;..\00-HAL_DRIVERS\CMSIS\Device\ST\STM32F7xx\Include;..\00-HAL_DRIVERS\CMSIS\Include;..\00-STM32_LIBRARIES\fatfs;..\00-STM32_LIBRARIES\fatfs\drivers;..\00-STM32_LIBRARIES\fatfs\option;.\include;..\00-FREETYPE_LIBRARY\include;..\00-FREETYPE_LIBRARY\src\base</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -869,14 +869,14 @@
           <GroupName>FREETYPE</GroupName>
           <Files>
             <File>
-              <FileName>freetype.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>.\lib\freetype.lib</FilePath>
-            </File>
-            <File>
               <FileName>module_freetype.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\User\module_freetype.h</FilePath>
+            </File>
+            <File>
+              <FileName>freetype.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>..\00-FREETYPE_LIBRARY\Objects\freetype.lib</FilePath>
             </File>
           </Files>
         </Group>
